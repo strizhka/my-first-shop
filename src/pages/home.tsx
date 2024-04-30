@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import ProductCard from "../components.tsx/productCard";
 
 interface Product {
@@ -28,14 +28,24 @@ const productCardProps: ProductCardProps = {
 
 export const Home = () => {
   return (
-    <div>
-      <Row>
+    <Container className="homePage">
+      <Row className="Title">
+        <Col>
+          <h1>Аквамир</h1>
+        </Col>
+      </Row>
+      <Row className="Category">
+        <Col>
+          <h2>Рыбки</h2>
+        </Col>
+      </Row>
+      <Row className="Products">
         <ProductCard {...productCardProps} />
         <ProductCard {...productCardProps} />
         <ProductCard {...productCardProps} />
         <ProductCard {...productCardProps} />
       </Row>
-    </div>
+    </Container>
   );
 };
 

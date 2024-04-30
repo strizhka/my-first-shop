@@ -5,6 +5,7 @@ import Header from "./components.tsx/header";
 import Footer from "./components.tsx/footer.tsx";
 import ProductCard from "./components.tsx/productCard.tsx";
 import { Col, Container, Row } from "react-bootstrap";
+import Sidebar from "./components.tsx/sidebar.tsx";
 
 interface Product {
   id: number;
@@ -42,13 +43,16 @@ function App() {
             </div>
           </Row>
           <Row>
-            <div className="content">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/cart" />
-              </Routes>
-            </div>
+            <Sidebar />
+            <Col>
+              <div className="content">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/cart" />
+                </Routes>
+              </div>
+            </Col>
           </Row>
           <Row>
             <div className="footer">

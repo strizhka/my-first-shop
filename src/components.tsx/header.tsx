@@ -18,14 +18,6 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home">Главная</Nav.Link>
-            <NavDropdown title="Категории" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Рыбки</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Растения</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Корм</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Аквариумы</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Декор</NavDropdown.Item>
-            </NavDropdown>
             <Form>
               <Row>
                 <Col xs="auto">
@@ -36,7 +28,7 @@ function Header() {
                   />
                 </Col>
                 <Col xs="auto">
-                  <Button type="submit">Submit</Button>
+                  <Button type="submit">Поиск</Button>
                 </Col>
               </Row>
             </Form>
