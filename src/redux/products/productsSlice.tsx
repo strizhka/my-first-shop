@@ -1,27 +1,37 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { allCategoriesApi } from "../../api/appApi";
+import { allProductsApi } from "../../api/appApi";
+import { Category } from "../../components.tsx/sidebar";
 
-export interface Category {
+export interface Product {
   id: number;
-  name: string;
+  title: string;
+  price: number;
+  description: string;
+  category: Category;
   image: string;
+  rating: Rating;
 }
 
-export interface CategoriesState {
-  list: Category[];
+export interface Rating {
+  rate: number;
+  count: number;
+}
+
+export interface ProductsState {
+  list: Product[];
   isLoading: boolean;
 }
 
-const initialState: CategoriesState = {
+const initialState: ProductsState = {
   list: [],
   isLoading: false,
 };
 
-export const getCategories = createAsyncThunk(
-  "categories/getCategories",
+export const getProducts = createAsyncThunk(
+  "products/getProducts",
   async (_, thunkAPI) => {
     try {
-      const res = await allCategoriesApi();
+      const res = await allProductsApi();
       return res; // Возвращаем весь объект ответа, а не только res.data
     } catch (err) {
       console.log(err);
@@ -30,23 +40,23 @@ export const getCategories = createAsyncThunk(
   }
 );
 
-export const categSlice = createSlice({
-  name: "categories",
+export const prodSlice = createSlice({
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getCategories.pending, (state) => {
+      .addCase(getProducts.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getCategories.fulfilled, (state, action) => {
+      .addCase(getProducts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.list = action.payload.data; // Извлекаем данные из ответа и устанавливаем в state.list
       })
-      .addCase(getCategories.rejected, (state) => {
+      .addCase(getProducts.rejected, (state) => {
         state.isLoading = false;
       });
   },
 });
 
-export default categSlice.reducer;
+export default prodSlice.reducer;

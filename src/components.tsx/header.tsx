@@ -2,7 +2,6 @@ import { Button, Col, Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 
 function Header() {
@@ -14,7 +13,7 @@ function Header() {
       className="fixed-top justify-content-between"
     >
       <Container className="header">
-        <Navbar.Brand href="/home">Аквамир</Navbar.Brand>
+        <Navbar.Brand href="/home">Stuff</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -6,22 +6,24 @@ import Footer from "./components.tsx/footer.tsx";
 import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "./components.tsx/sidebar.tsx";
 import { useEffect } from "react";
-import { getCategories } from "./redux/categories/categoriesSlice.tsx";
+
 import { useAppDispatch, useAppSelector } from "./redux/hooks.tsx";
+import { getProducts } from "./redux/products/productsSlice.tsx";
 
 function App() {
   const dispatch = useAppDispatch();
-  const categories = useAppSelector((state) => state.categories.list);
+
+  const products = useAppSelector((state) => state.products.list);
 
   useEffect(() => {
-    dispatch(getCategories());
+    dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    if (categories.length > 1) {
-      console.log(categories);
+    if (products.length > 1) {
+      console.log(products);
     }
-  }, [categories]);
+  }, [products]);
 
   return (
     <div className="App">
@@ -58,6 +60,3 @@ function App() {
 }
 
 export default App;
-function dispath(arg0: any) {
-  throw new Error("Function not implemented.");
-}

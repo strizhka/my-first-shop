@@ -1,17 +1,23 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { useAppSelector } from "../redux/hooks";
+
+export enum Category {
+  Electronics = "electronics",
+  Jewelery = "jewelery",
+  MenSClothing = "men's clothing",
+  WomenSClothing = "women's clothing",
+}
 
 function Sidebar() {
-  const categories = useAppSelector((state) => state.categories.list);
+  const categories = Object.values(Category); // Создаем массив из значений перечисления
 
   return (
     <Navbar className="justify-content-between">
       <Container className="sidebar">
         <Nav defaultActiveKey="/" className="flex-column">
           <Nav.Link href="/">Главная</Nav.Link>
-          {categories.map(({ id, name }) => (
-            <Nav.Link key={id} href={`/categories/${id}`}>
-              {name}
+          {categories.map((category) => (
+            <Nav.Link key={category} href={`/categories/${category}`}>
+              {category}
             </Nav.Link>
           ))}
           <Nav.Link href="/about">О нас</Nav.Link>

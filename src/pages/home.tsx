@@ -1,49 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
-import ProductCard from "../components.tsx/productCard";
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-}
-
-interface ProductCardProps {
-  product: Product;
-}
-
-const pr: Product = {
-  id: 0,
-  name: "string",
-  description: "str",
-  price: 500,
-  imageUrl: "https://i.ucrazy.org/files/pics/2023.10/2023-10-17-21-53-072.webp",
-};
-
-const productCardProps: ProductCardProps = {
-  product: pr,
-};
+import Products from "../components.tsx/products";
+import { useAppSelector } from "../redux/hooks";
 
 export const Home = () => {
+  const list = useAppSelector((state) => state.products.list);
+
   return (
     <Container className="homePage">
       <Row className="Title">
         <Col>
-          <h1>Аквамир</h1>
-        </Col>
-      </Row>
-      <Row className="Category">
-        <Col>
-          <h2>Рыбки</h2>
+          <h1>Grrrrrrr</h1>
         </Col>
       </Row>
       <Row className="Products">
-        {/* <ProductCard {...productCardProps} />
-        <ProductCard {...productCardProps} />
-        <ProductCard {...productCardProps} />
-        <ProductCard {...productCardProps} /> */}
+        <Products products={list} amount={5} title="dddd"></Products>
+        <Products products={list} amount={10} title="dfgfgddfg"></Products>
       </Row>
     </Container>
   );
