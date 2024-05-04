@@ -13,7 +13,7 @@ export function getProductById(_id: number) {
   return appApiIns.get("products/${_id}");
 }
 
-export function allCategoriesApi() {
+export async function allCategoriesApi() {
   return appApiIns.get("categories");
 }
 

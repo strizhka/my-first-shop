@@ -1,8 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { allCategoriesApi } from "../../api/appApi";
 
+export interface Category {
+  id: number;
+  name: string;
+  image: string;
+}
+
 export interface CategoriesState {
-  list: [];
+  list: Category[];
   isLoading: boolean;
 }
 
@@ -16,10 +22,10 @@ export const getCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await allCategoriesApi();
-      return res.data;
+      return res; // Возвращаем весь объект ответа, а не только res.data
     } catch (err) {
       console.log(err);
-      return thunkAPI.rejectWithValue(err);
+      return thunkAPI.rejectWithValue(err); // Передаем объект ошибки целиком
     }
   }
 );
@@ -29,19 +35,18 @@ export const categSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getCategories.pending, (state) => {
-      state.isLoading = true;
-    });
-    builder.addCase(getCategories.fulfilled, (state, { payload }) => {
-      state.list = payload;
-      state.isLoading = false;
-    });
-    builder.addCase(getCategories.rejected, (state) => {
-      state.isLoading = false;
-    });
+    builder
+      .addCase(getCategories.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getCategories.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.list = action.payload.data; // Извлекаем данные из ответа и устанавливаем в state.list
+      })
+      .addCase(getCategories.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
-
-export const {} = categSlice.actions;
 
 export default categSlice.reducer;
