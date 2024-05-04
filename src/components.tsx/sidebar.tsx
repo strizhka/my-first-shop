@@ -1,16 +1,16 @@
-import { Col } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 function Sidebar() {
   return (
-    <Col sm={2} className="sidebar">
-      <h3>Меню</h3>
-      <ul>
-        <li>Рыбки</li>
-        <li>Растения</li>
-        <li>Грунт</li>
-        <li>Аквариумы</li>
-      </ul>
-    </Col>
+    <Navbar className="justify-content-between">
+      <Container className="sidebar">
+        <Nav defaultActiveKey="/" className="flex-column">
+          <Nav.Link href="/">Главная</Nav.Link>
+          <Nav.Link href="/about">О нас</Nav.Link>
+          <Nav.Link href="/contacts">Контакты</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }
 

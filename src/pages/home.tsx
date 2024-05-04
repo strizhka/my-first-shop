@@ -40,10 +40,10 @@ export const Home = () => {
         </Col>
       </Row>
       <Row className="Products">
+        {/* <ProductCard {...productCardProps} />
         <ProductCard {...productCardProps} />
         <ProductCard {...productCardProps} />
-        <ProductCard {...productCardProps} />
-        <ProductCard {...productCardProps} />
+        <ProductCard {...productCardProps} /> */}
       </Row>
     </Container>
   );
