@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Card, Row } from "react-bootstrap";
 import { Product } from "../redux/products/productsSlice";
 
 interface ProductCardProps {
@@ -8,23 +8,23 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card className="h-100 d-flex flex-column" style={{ width: "15rem" }}>
-      <Card>
-        <Card.Img
-          className="card-img-top"
-          variant="top"
-          src={product.image}
-          style={{ height: "310px", objectFit: "cover" }}
-        />
-      </Card>
-      <Card.Body style={{ display: "flex", flexDirection: "column" }}>
-        <Row>
+    <Card className="mb-4 d-flex flex-column" style={{ width: "15rem" }}>
+      <Card.Img
+        className="card-img-top"
+        variant="top"
+        src={product.image}
+        style={{ height: "260px", objectFit: "contain" }}
+      />
+      <Card.Body
+        style={{ display: "flex", flexDirection: "column", minHeight: "230px" }}
+      >
+        <Row style={{ marginBottom: "10px" }}>
           <Card.Title>{product.title}</Card.Title>
         </Row>
-        <Row>
-          <Card.Text>{product.description}</Card.Text>
+        <Row style={{ marginBottom: "30px" }}>
+          <Card.Text>{product.category}</Card.Text>
         </Row>
-        <Row style={{ marginTop: "auto" }}>
+        <Row className="mt-auto mb-2">
           <Card.Text>Price: ${product.price}</Card.Text>
         </Row>
       </Card.Body>

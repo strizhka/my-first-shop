@@ -7,23 +7,21 @@ import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "./components.tsx/sidebar.tsx";
 import { useEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "./redux/hooks.tsx";
+import { useAppDispatch } from "./redux/hooks.tsx";
 import { getProducts } from "./redux/products/productsSlice.tsx";
+import {
+  Electronics,
+  Jewelery,
+  MenSClothing,
+  WomenSClothing,
+} from "./pages/categPage.tsx";
 
 function App() {
   const dispatch = useAppDispatch();
 
-  const products = useAppSelector((state) => state.products.list);
-
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (products.length > 1) {
-      console.log(products);
-    }
-  }, [products]);
 
   return (
     <div className="App">
@@ -43,6 +41,19 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
+                  <Route path="/categories/Jewelery" element={<Jewelery />} />
+                  <Route
+                    path="/categories/Men's clothing"
+                    element={<MenSClothing />}
+                  />
+                  <Route
+                    path="/categories/Women's clothing"
+                    element={<WomenSClothing />}
+                  />
+                  <Route
+                    path="/categories/Electronics"
+                    element={<Electronics />}
+                  />
                   <Route path="/cart" />
                 </Routes>
               </div>

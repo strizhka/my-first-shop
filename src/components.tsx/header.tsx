@@ -27,14 +27,14 @@ function Header() {
                   />
                 </Col>
                 <Col xs="auto">
-                  <Button type="submit">Поиск</Button>
+                  <Button type="submit">Search</Button>
                 </Col>
               </Row>
             </Form>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="#link">Личный кабинет</Nav.Link>
-            <Nav.Link href="#link">Корзина</Nav.Link>
+            <Nav.Link href="#link">My account</Nav.Link>
+            <Nav.Link href="#link">Cart</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

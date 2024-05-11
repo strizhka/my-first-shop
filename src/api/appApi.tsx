@@ -6,17 +6,17 @@ export const appApiIns = axios.create({
 });
 
 export function allProductsApi() {
-  return appApiIns.get("products");
+  return appApiIns.get(`products`);
 }
 
 export function getProductById(_id: number) {
-  return appApiIns.get("products/${_id}");
+  return appApiIns.get(`products/${_id}`);
 }
 
 export async function allCategoriesApi() {
-  return appApiIns.get("categories");
+  return appApiIns.get(`products/categories`);
 }
 
-export function idCategoriesApi(_id: number) {
-  return appApiIns.get("categories/${_id}");
+export function getCategoryById(category: string) {
+  return appApiIns.get(`products/category/${category}`);
 }

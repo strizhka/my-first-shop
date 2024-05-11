@@ -19,12 +19,16 @@ export interface Rating {
 
 export interface ProductsState {
   list: Product[];
+  filtered: Product[];
+  filteredCategory: Product[];
   isLoading: boolean;
 }
 
 const initialState: ProductsState = {
   list: [],
+  filtered: [],
   isLoading: false,
+  filteredCategory: [],
 };
 
 export const getProducts = createAsyncThunk(
@@ -32,7 +36,7 @@ export const getProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await allProductsApi();
-      return res; // Возвращаем весь объект ответа, а не только res.data
+      return res;
     } catch (err) {
       console.log(err);
       return thunkAPI.rejectWithValue(err); // Передаем объект ошибки целиком
@@ -43,7 +47,14 @@ export const getProducts = createAsyncThunk(
 export const prodSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    filterByPrice: (state, { payload }) => {
+      state.filtered = state.list.filter(({ price }) => price < payload);
+    },
+    filterByCategory: (state, { payload }) => {
+      state.filtered = state.list.filter(({ category }) => category == payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProducts.pending, (state) => {
@@ -58,5 +69,7 @@ export const prodSlice = createSlice({
       });
   },
 });
+
+export const { filterByPrice, filterByCategory } = prodSlice.actions;
 
 export default prodSlice.reducer;

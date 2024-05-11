@@ -15,11 +15,11 @@ const Products = ({
   const list = products.filter((_, i) => i < amount);
 
   return (
-    <section>
-      {title && <h2>{title}</h2>}
-      <div>
-        <Container>
-          <Row xs={2} sm={3} md={4}>
+    <section className="mb-3">
+      <div className="mt-3">{title && <h2>{title}</h2>}</div>
+      <div className="mt-3">
+        <Container className="mt-3">
+          <Row className="mt-3 mb-3" xs={2} sm={3} md={3} lg={4}>
             {list.map((item: Product) => (
               <Link to={`/products/${item.id}`} key={item.id}>
                 <ProductCard product={item}></ProductCard>

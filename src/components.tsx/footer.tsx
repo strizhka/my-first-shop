@@ -1,10 +1,8 @@
-import "./footer.css"; // Импорт файла стилей
-
 function Footer() {
   return (
     <footer className="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <p className="col-md-4 mb-0 text-muted">
-        © {new Date().getFullYear()} Аквамир
+        © {new Date().getFullYear()} Stuff
       </p>
 
       <a
@@ -17,22 +15,22 @@ function Footer() {
       <ul className="nav col-md-4 justify-content-end mr-3">
         <li className="nav-item">
           <a href="/home" className="nav-link px-2 text-muted">
-            Главная
+            Main Page
           </a>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link px-2 text-muted">
-            Категории
+            Categories
           </a>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link px-2 text-muted">
-            Личный кабинет
+            My Account
           </a>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link px-2 text-muted">
-            Корзина
+            Cart
           </a>
         </li>
       </ul>
