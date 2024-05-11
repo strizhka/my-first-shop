@@ -11,7 +11,7 @@ function Sidebar() {
   const categories = Object.values(Category); // Создаем массив из значений перечисления
 
   return (
-    <Navbar className="justify-content-between fixed-top">
+    <Navbar>
       <Container className="sidebar">
         <Nav defaultActiveKey="/" className="flex-column">
           <Nav.Link href="/">Stuff</Nav.Link>

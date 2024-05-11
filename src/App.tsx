@@ -9,12 +9,8 @@ import { useEffect } from "react";
 
 import { useAppDispatch } from "./redux/hooks.tsx";
 import { getProducts } from "./redux/products/productsSlice.tsx";
-import {
-  Electronics,
-  Jewelery,
-  MenSClothing,
-  WomenSClothing,
-} from "./pages/categPage.tsx";
+import { CategoryPage } from "./pages/categPage.tsx";
+import ProductDetails from "./pages/productDetails.tsx";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -28,7 +24,7 @@ function App() {
       <BrowserRouter>
         <Container>
           <Row>
-            <div className="header">
+            <div>
               <Header />
             </div>
           </Row>
@@ -41,20 +37,9 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
-                  <Route path="/categories/Jewelery" element={<Jewelery />} />
-                  <Route
-                    path="/categories/Men's clothing"
-                    element={<MenSClothing />}
-                  />
-                  <Route
-                    path="/categories/Women's clothing"
-                    element={<WomenSClothing />}
-                  />
-                  <Route
-                    path="/categories/Electronics"
-                    element={<Electronics />}
-                  />
+                  <Route path="/categories/:title" element={<CategoryPage />} />
                   <Route path="/cart" />
+                  <Route path="/products/:id" element={<ProductDetails />} />
                 </Routes>
               </div>
             </Col>

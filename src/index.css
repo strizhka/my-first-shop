@@ -83,14 +83,14 @@ button:focus-visible {
 }
 
 .sidebar {
-  width: auto;
+  width: 250px;
   margin-top: 70px;
   margin-bottom: 40px;
-  margin-left: 70px;
 }
 
 .footer {
   margin: 0%;
+  position: sticky;
 }
 
 .productcard {
