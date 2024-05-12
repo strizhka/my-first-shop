@@ -3,6 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
+import AccountIcon from "./icons/account.tsx";
+import CartIcon from "./icons/cart.tsx";
+import SearchIcon from "./icons/search.tsx";
 
 function Header() {
   return (
@@ -16,10 +19,11 @@ function Header() {
         <Navbar.Brand href="/home">Stuff</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+          <Nav style={{ marginRight: "200px" }}></Nav>
           <Nav className="me-auto">
             <Form>
               <Row>
-                <Col xs="auto">
+                <Col xs="auto" style={{ width: "350px" }}>
                   <Form.Control
                     type="text"
                     placeholder="Search"
@@ -27,14 +31,20 @@ function Header() {
                   />
                 </Col>
                 <Col xs="auto">
-                  <Button type="submit">Search</Button>
+                  <SearchIcon />
+                  {/* <Button type="submit">Search</Button> */}
                 </Col>
               </Row>
             </Form>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="#link">My account</Nav.Link>
-            <Nav.Link href="#link">Cart</Nav.Link>
+            <Nav.Link href="/user">
+              <AccountIcon />
+            </Nav.Link>
+            <Nav className="me-3"></Nav>
+            <Nav.Link href="/cart">
+              <CartIcon />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

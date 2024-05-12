@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Product } from "../redux/products/productsSlice";
+import { Product } from "../redux/Slices/productsSlice";
 import ProductCard from "./productCard";
 import { Container, Row } from "react-bootstrap";
 
@@ -21,9 +20,9 @@ const Products = ({
         <Container className="mt-3">
           <Row className="mt-3 mb-3" xs={2} sm={3} md={3} lg={4}>
             {list.map((item: Product) => (
-              <Link to={`/products/${item.id}`} key={item.id}>
+              <div>
                 <ProductCard product={item}></ProductCard>
-              </Link>
+              </div>
             ))}
           </Row>
         </Container>

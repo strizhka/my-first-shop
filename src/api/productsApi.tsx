@@ -1,22 +1,22 @@
 import axios from "axios";
 
-export const appApiIns = axios.create({
+export const prodApiIns = axios.create({
   baseURL: "https://fakestoreapi.com/",
   headers: { "Content-Type": "application/json" },
 });
 
 export function allProductsApi() {
-  return appApiIns.get(`products`);
+  return prodApiIns.get(`products`);
 }
 
 export function getProductById(_id: number) {
-  return appApiIns.get(`products/${_id}`);
+  return prodApiIns.get(`products/${_id}`);
 }
 
 export async function allCategoriesApi() {
-  return appApiIns.get(`products/categories`);
+  return prodApiIns.get(`products/categories`);
 }
 
 export function getCategoryById(category: string) {
-  return appApiIns.get(`products/category/${category}`);
+  return prodApiIns.get(`products/category/${category}`);
 }

@@ -8,9 +8,12 @@ import Sidebar from "./components.tsx/sidebar.tsx";
 import { useEffect } from "react";
 
 import { useAppDispatch } from "./redux/hooks.tsx";
-import { getProducts } from "./redux/products/productsSlice.tsx";
+import { getProducts } from "./redux/Slices/productsSlice.tsx";
 import { CategoryPage } from "./pages/categPage.tsx";
 import ProductDetails from "./pages/productDetails.tsx";
+
+import { Cart } from "./pages/cart.tsx";
+import UserProfile from "./pages/user.tsx";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -38,7 +41,8 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/categories/:title" element={<CategoryPage />} />
-                  <Route path="/cart" />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/user/:username" element={<UserProfile />} />
                   <Route path="/products/:id" element={<ProductDetails />} />
                 </Routes>
               </div>
