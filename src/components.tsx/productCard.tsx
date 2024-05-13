@@ -25,9 +25,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <Card.Body
         style={{ display: "flex", flexDirection: "column", minHeight: "230px" }}
       >
-        <Row style={{ marginBottom: "10px" }}>
+        <Row style={{ height: "100px", marginBottom: "10px" }}>
           <Link to={`/products/${product.id}`} key={product.id}>
-            <Card.Title>{product.title}</Card.Title>
+            <Card.Title>
+              <h5>{product.title}</h5>
+            </Card.Title>
           </Link>
         </Row>
         <Row style={{ marginBottom: "30px" }}>
@@ -36,10 +38,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </Link>
         </Row>
         <Row className="mt-auto mb-2">
-          <Card.Text>Price: ${product.price}</Card.Text>
+          <Card.Text>
+            <h4>${product.price}</h4>
+          </Card.Text>
         </Row>
         <Row className="mt-1 mb-2">
-          <AddToCart item={product} />
+          <AddToCart item={product} mes={"Add to Cart"} />
         </Row>
       </Card.Body>
     </Card>

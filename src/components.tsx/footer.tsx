@@ -29,7 +29,7 @@ function Footer() {
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link px-2 text-muted">
+          <a href="/cart" className="nav-link px-2 text-muted">
             Cart
           </a>
         </li>

@@ -2,6 +2,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { CartItem } from "../redux/Slices/userSlice";
 import RemoveFromCart from "./removeFromCart";
 import { Link } from "react-router-dom";
+import AddToCart from "./addToCart";
 
 const CartProductCard = ({ product }: { product: CartItem }) => {
   const { id, title, price, image } = product.product;
@@ -32,7 +33,7 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
             <Col>
               <Row>
                 <Col>
-                  <Card.Text>
+                  <Card.Text className="justify-content-end">
                     <h6>
                       ${price} x {quantity} =
                     </h6>
@@ -40,7 +41,16 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
                   </Card.Text>
                 </Col>
                 <Col>
-                  <RemoveFromCart item={product} />
+                  <Row>
+                    <div
+                      className="d-flex justify-content-end"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <RemoveFromCart item={product} mes={"-1"} />
+                      <h3 style={{ margin: "0 20px" }}>{quantity}</h3>
+                      <AddToCart item={product.product} mes={"+1"} />
+                    </div>
+                  </Row>
                 </Col>
               </Row>
             </Col>

@@ -3,7 +3,7 @@ import { useAppDispatch } from "../redux/hooks";
 import { addItemToCart } from "../redux/Slices/userSlice";
 import { Product } from "../redux/Slices/productsSlice";
 
-export const AddToCart = ({ item }: { item: Product }) => {
+export const AddToCart = ({ item, mes }: { item: Product; mes: any }) => {
   const dispatch = useAppDispatch();
 
   const AddProduct = () => {
@@ -12,11 +12,9 @@ export const AddToCart = ({ item }: { item: Product }) => {
 
   return (
     <>
-      <div>
-        <Button variant="primary" onClick={AddProduct}>
-          Add to Cart
-        </Button>
-      </div>
+      <Button variant="primary" onClick={AddProduct}>
+        {mes}
+      </Button>
     </>
   );
 };
