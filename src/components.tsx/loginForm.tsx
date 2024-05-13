@@ -26,7 +26,6 @@ function LoginForm() {
         className="mb-3"
       >
         <Form.Control
-          type="email"
           placeholder="name@example.com"
           value={email}
           onChange={handleEmailChange}

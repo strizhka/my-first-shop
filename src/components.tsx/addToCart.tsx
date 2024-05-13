@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import { useAppDispatch } from "../redux/hooks";
 import { addItemToCart } from "../redux/Slices/userSlice";
 import { Product } from "../redux/Slices/productsSlice";
@@ -12,9 +11,9 @@ export const AddToCart = ({ item, mes }: { item: Product; mes: any }) => {
 
   return (
     <>
-      <Button variant="success" onClick={AddProduct}>
+      <button className="buttonAdd" onClick={AddProduct}>
         {mes}
-      </Button>
+      </button>
     </>
   );
 };

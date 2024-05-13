@@ -15,7 +15,7 @@ const Products = ({
 
   return (
     <section className="mb-3">
-      <div className="mt-3">{title && <h2>{title}</h2>}</div>
+      <div className="mt-3 text">{title && <h2>{title}</h2>}</div>
       <div className="mt-3">
         <Container className="mt-3">
           <Row className="mt-3 mb-3" xs={2} sm={3} md={3} lg={4}>

@@ -31,7 +31,7 @@ const Category = ({ category, title }: { category: string; title: string }) => {
     <Container className="homePage">
       <Row className="title">
         <Col>
-          <h1>{title}</h1>
+          <h1 className="text">{title}</h1>
         </Col>
       </Row>
       <Row className="Products">

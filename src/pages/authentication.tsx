@@ -15,13 +15,24 @@ export const Authentication = () => {
   };
 
   return (
-    <div>
-      <Nav variant="underline" defaultActiveKey="/login">
+    <div
+      style={{
+        width: "40%",
+        marginTop: "20%",
+        marginBottom: "20%",
+        marginLeft: "25%",
+      }}
+    >
+      <Nav variant="underline dark" defaultActiveKey="/login">
         <Nav.Item>
-          <Nav.Link onClick={handleLoginClick}>Login</Nav.Link>
+          <Nav.Link className="category-text" onClick={handleLoginClick}>
+            Login
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link onClick={handleSignUpClick}>Sign Up</Nav.Link>
+          <Nav.Link className="category-text" onClick={handleSignUpClick}>
+            Sign Up
+          </Nav.Link>
         </Nav.Item>
       </Nav>
       <div>

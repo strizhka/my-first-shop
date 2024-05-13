@@ -14,7 +14,7 @@ function Header() {
   return (
     <Navbar
       expand="lg"
-      bg="dark"
+      bg="black"
       data-bs-theme="dark"
       className="fixed-top justify-content-between"
     >

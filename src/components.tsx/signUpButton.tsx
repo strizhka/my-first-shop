@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { userLogin, userSignUp, validateTokens } from "../api/authThunks";
-import { login } from "../redux/Slices/userSlice";
+import { useAppDispatch } from "../redux/hooks";
+import { userSignUp } from "../api/authThunks";
 
 export function Btn_SignUp({
   email,
@@ -21,7 +19,7 @@ export function Btn_SignUp({
 
   return (
     <div>
-      <Button href="/home" variant="primary" onClick={handleSignUp}>
+      <Button href="/home" variant="dark" onClick={handleSignUp}>
         Sign Up
       </Button>
     </div>

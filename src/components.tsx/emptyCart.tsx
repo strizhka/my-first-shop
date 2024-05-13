@@ -10,10 +10,12 @@ export const EmptyCart = () => {
       >
         <div className="text-center">
           <Row className="mb-3">
-            <div>There is nothing here yet!</div>
+            <div className="text">There is nothing here yet!</div>
           </Row>
           <Row>
-            <Link to={`/`}>Continue shopping</Link>
+            <Link className="text2" to={`/`}>
+              Continue shopping
+            </Link>
           </Row>
         </div>
       </Row>

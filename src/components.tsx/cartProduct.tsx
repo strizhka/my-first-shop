@@ -9,8 +9,8 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
   const quantity = product.quantity;
   return (
     <Card
-      className="d-flex flex-row align-items-center"
-      style={{ width: "90%" }}
+      className="productcard d-flex flex-row align-items-center"
+      style={{ width: "90%", height: "120px" }}
     >
       <Col xs={2}>
         <Link to={`/products/${id}`} style={{ textDecoration: "none" }}>
@@ -18,7 +18,12 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
             className="card-img-top"
             variant="left"
             src={image}
-            style={{ height: "80px", maxWidth: "100%", objectFit: "contain" }}
+            style={{
+              backgroundColor: "white",
+              height: "115px",
+              maxWidth: "100%",
+              objectFit: "contain",
+            }}
           />
         </Link>
       </Col>
@@ -27,17 +32,17 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
           <Row>
             <Col xs={7}>
               <Link to={`/products/${id}`} style={{ color: "black" }}>
-                <Card.Title>{title}</Card.Title>
+                <Card.Title className="text">{title}</Card.Title>
               </Link>
             </Col>
             <Col>
               <Row>
                 <Col>
                   <Card.Text className="justify-content-end">
-                    <h6>
+                    <h6 className="text2">
                       ${price} x {quantity} =
                     </h6>
-                    <h3>${price * quantity}</h3>
+                    <h3 className="text">${price * quantity}</h3>
                   </Card.Text>
                 </Col>
                 <Col>

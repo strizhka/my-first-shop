@@ -11,9 +11,9 @@ export const ClearCart = () => {
 
   return (
     <>
-      <Button variant="danger" onClick={RemoveProduct}>
+      <button className="buttonDelete" onClick={RemoveProduct}>
         Clear Cart
-      </Button>
+      </button>
     </>
   );
 };

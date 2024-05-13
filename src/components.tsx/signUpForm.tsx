@@ -47,7 +47,7 @@ function SignUpForm() {
       <Dropdown className="mt-3" as={ButtonGroup}>
         <Btn_SignUp email={email} password={password} role={role}></Btn_SignUp>
 
-        <Dropdown.Toggle id="dropdown-split-basic" />
+        <Dropdown.Toggle variant="dark" id="dropdown-split-basic" />
 
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => handleRoleSelect("user")}>

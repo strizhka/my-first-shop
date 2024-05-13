@@ -11,11 +11,11 @@ export const UserProfile = () => {
         <>
           <Row>
             <Col>
-              <h3>Hello, {user.userName}!</h3>
-              <p className="mt-3">
+              <h2 className="text mt-3">Hello, {user.userName}!</h2>
+              <p className="mt-3 text2">
                 <strong>Username:</strong> {user.userName}
               </p>
-              <p>
+              <p className="text2">
                 <strong>Role:</strong> {user.role}
               </p>
             </Col>

@@ -10,11 +10,11 @@ export const Home = () => {
     <Container className="homePage">
       <Row className="title">
         <Col>
-          <h1>Stuff</h1>
+          <h1>Welcome to Stuff!</h1>
         </Col>
       </Row>
       <Row className="Products">
-        <Products products={list} amount={4} title="Sales"></Products>
+        <Products products={list} amount={4} title="Newcomers"></Products>
         <Products products={list} amount={10} title="Bestsellers"></Products>
       </Row>
     </Container>

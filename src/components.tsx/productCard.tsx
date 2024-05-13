@@ -14,13 +14,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     product.category!.charAt(0).toUpperCase() + product.category!.slice(1);
 
   return (
-    <Card className="mb-4 d-flex flex-column" style={{ width: "15rem" }}>
+    <Card className="productcard" style={{ width: "15rem" }}>
       <Link to={`/products/${product.id}`} key={product.id}>
         <Card.Img
           className="card-img-top"
           variant="top"
           src={product.image}
-          style={{ height: "260px", objectFit: "contain" }}
+          style={{
+            height: "260px",
+            objectFit: "contain",
+            backgroundColor: "white",
+          }}
         />
       </Link>
       <Card.Body
@@ -39,7 +43,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </Link>
         </Row>
         <Row className="mt-auto mb-2">
-          <Card.Text>
+          <Card.Text className="text2">
             <h4>${product.price}</h4>
           </Card.Text>
         </Row>

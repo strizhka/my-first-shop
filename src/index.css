@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -16,11 +17,19 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #ffffff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #cbcdfb;
+}
+
+.text {
+  color: #ffffff;
+}
+
+.text2 {
+  color: #9d9d9d;
 }
 
 html,
@@ -29,6 +38,7 @@ body {
   height: 100%;
   /* display: flex;
   place-items: center; */
+  background-color: #1a1a1a;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -36,23 +46,47 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: aliceblue;
 }
 
-button {
+.buttonAdd {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #5627ad;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #ff649f;
+.buttonAdd:hover {
+  border-color: #6439b3;
+  background-color: #6439b3;
 }
-button:focus,
+.buttonAdd:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.buttonDelete {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #6439b3;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.buttonDelete:hover {
+  border-color: #6439b3;
+  background-color: #5627ad;
+}
+
+.buttonDelete:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
@@ -71,26 +105,31 @@ button:focus-visible {
 }
 
 
+
 .container {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-
+  
 }
 
 .header {
   flex-direction: row;
+  background-color: #0c0c0c56;
 }
 
 .sidebar {
   width: 250px;
   margin-top: 70px;
   margin-bottom: 40px;
+  background-color: #0c0c0c56;
+  color: white;
 }
 
 .footer {
   margin: 0%;
   position: sticky;
+  color: #ffffff;
 }
 
 .productcard {
@@ -98,6 +137,7 @@ button:focus-visible {
   width: "15rem";
   display: flex;
   flex-direction: column;
+  background-color: #262626;
 }
 
 .product-details {
@@ -106,6 +146,27 @@ button:focus-visible {
 }
 
 .title {
-
+  
   margin-top: 20px;
+}
+
+.category-text {
+  color: #ffffff;
+}
+.category-text:hover {
+  color: #cbcdfb;
+}
+.category-text.active {
+  color: #8063c9;
+}
+
+.footer-text1 {
+  color: #787878;
+}
+
+.footer-text {
+  color: #787878;
+}
+.footer-text:hover {
+  color: #989898;
 }

@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { userLogin, validateTokens } from "../api/authThunks";
+import { userLogin } from "../api/authThunks";
 import { User } from "../redux/Slices/userSlice";
+import { Link } from "react-router-dom";
 
 export function Btn_Login({
   email,
@@ -23,15 +22,15 @@ export function Btn_Login({
   console.log(u);
   return (
     <div>
-      <Button
-        href="/user"
-        className="mt-3"
-        variant="primary"
-        onClick={handleSignIn}
-      >
+      <button className="mt-3 buttonAdd" onClick={handleSignIn}>
         Login
-      </Button>
+      </button>
       <div className="mt-3"></div>
+      {useAppSelector((state) => state.user.isLoged) ? (
+        <Link to="/user">Success! Go to your Account Page?</Link>
+      ) : (
+        <Link to="/home">Go to Home Page?</Link>
+      )}
     </div>
   );
 }
