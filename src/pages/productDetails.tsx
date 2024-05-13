@@ -3,6 +3,7 @@ import { getProductById } from "../api/productsApi";
 import { useState, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import AddToCart from "../components.tsx/addToCart";
+import CartIcon from "../components.tsx/icons/cart";
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -46,7 +47,10 @@ const ProductDetails = () => {
                 <h2>Price: ${product.price}</h2>
               </Col>
               <Col>
-                <AddToCart item={product}></AddToCart>
+                <AddToCart
+                  item={product}
+                  mes={<CartIcon></CartIcon>}
+                ></AddToCart>
               </Col>
             </Row>
             <Row className="mt-5">

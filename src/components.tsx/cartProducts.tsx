@@ -1,6 +1,7 @@
-import { Col, Container } from "react-bootstrap";
+import { Button, Col, Container } from "react-bootstrap";
 import { CartItem } from "../redux/Slices/userSlice";
 import CartProductCard from "./cartProduct";
+import { ClearCart } from "./clearCartButton";
 
 const CartProducts = ({ products = [] }: { products: CartItem[] }) => {
   const totalAmount = products.reduce(
@@ -23,6 +24,7 @@ const CartProducts = ({ products = [] }: { products: CartItem[] }) => {
       >
         <h4>Total: ${totalAmount.toFixed(2)}</h4>
       </div>
+      <ClearCart />
     </section>
   );
 };

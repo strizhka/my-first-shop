@@ -7,18 +7,18 @@ export interface CartItem {
 }
 
 export interface User {
-  UserName: string;
-  Role: string;
+  userName: string;
+  role: string;
   Password: string;
   AccToken: string | null;
   RefToken: string | null;
 }
 
 export interface UserState {
+  AccToken: string | null;
   currentUser: User | null;
   isLoged: boolean;
   cartList: CartItem[];
-  AccToken: string | null;
   RefToken: string | null;
 }
 
@@ -38,16 +38,24 @@ export const userSlice = createSlice({
       state.isLoged = true;
       state.currentUser = action.payload;
     },
+
     logout: (state) => {
       state.isLoged = false;
       state.currentUser = null;
     },
+
     setAccessToken: (state, action) => {
       state.AccToken = action.payload;
     },
+
     setRefreshToken: (state, action) => {
       state.RefToken = action.payload;
     },
+
+    clearCart: (state) => {
+      state.cartList = [];
+    },
+
     addItemToCart: (state, action) => {
       const itemToAdd = action.payload;
       const existingItemIndex = state.cartList.findIndex(
@@ -87,6 +95,7 @@ export const {
   logout,
   setAccessToken,
   setRefreshToken,
+  clearCart,
   addItemToCart,
   removeItemFromCart,
 } = userSlice.actions;

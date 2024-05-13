@@ -6,8 +6,11 @@ import Form from "react-bootstrap/Form";
 import AccountIcon from "./icons/account.tsx";
 import CartIcon from "./icons/cart.tsx";
 import SearchIcon from "./icons/search.tsx";
+import { useAppSelector } from "../redux/hooks.tsx";
 
 function Header() {
+  const isLogin: boolean = useAppSelector((state) => state.user.isLoged);
+
   return (
     <Navbar
       expand="lg"
@@ -38,9 +41,16 @@ function Header() {
             </Form>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="/user">
-              <AccountIcon />
-            </Nav.Link>
+            {isLogin && (
+              <Nav.Link href="/user">
+                <AccountIcon />
+              </Nav.Link>
+            )}
+            {!isLogin && (
+              <Nav.Link href="/auth">
+                <AccountIcon />
+              </Nav.Link>
+            )}
             <Nav className="me-3"></Nav>
             <Nav.Link href="/cart">
               <CartIcon />

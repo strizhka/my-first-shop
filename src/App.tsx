@@ -13,7 +13,9 @@ import { CategoryPage } from "./pages/categPage.tsx";
 import ProductDetails from "./pages/productDetails.tsx";
 
 import { Cart } from "./pages/cart.tsx";
-import UserProfile from "./pages/user.tsx";
+import { UserPage } from "./pages/user.tsx";
+import { Authentication } from "./pages/authentication.tsx";
+import LoginForm from "./components.tsx/loginForm.tsx";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -42,8 +44,9 @@ function App() {
                   <Route path="/home" element={<Home />} />
                   <Route path="/categories/:title" element={<CategoryPage />} />
                   <Route path="/cart" element={<Cart />} />
-                  <Route path="/user/:username" element={<UserProfile />} />
                   <Route path="/products/:id" element={<ProductDetails />} />
+                  <Route path="/auth" element={<Authentication />} />
+                  <Route path="/user" element={<UserPage />} />
                 </Routes>
               </div>
             </Col>

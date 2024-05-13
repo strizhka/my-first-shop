@@ -12,7 +12,7 @@ export const AddToCart = ({ item, mes }: { item: Product; mes: any }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={AddProduct}>
+      <Button variant="success" onClick={AddProduct}>
         {mes}
       </Button>
     </>

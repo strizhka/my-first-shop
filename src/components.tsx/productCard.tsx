@@ -3,6 +3,7 @@ import { Card, Row } from "react-bootstrap";
 import { Product } from "../redux/Slices/productsSlice";
 import AddToCart from "./addToCart";
 import { Link } from "react-router-dom";
+import CartIcon from "./icons/cart";
 
 interface ProductCardProps {
   product: Product;
@@ -42,8 +43,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <h4>${product.price}</h4>
           </Card.Text>
         </Row>
-        <Row className="mt-1 mb-2">
-          <AddToCart item={product} mes={"Add to Cart"} />
+        <Row className="mt-1">
+          <AddToCart item={product} mes={<CartIcon></CartIcon>} />
         </Row>
       </Card.Body>
     </Card>
