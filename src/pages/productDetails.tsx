@@ -25,7 +25,7 @@ const ProductDetails = () => {
   return (
     <Container>
       {product && (
-        <Row className="product-details">
+        <Row className="product-details text">
           <Col md={4}>
             <Card>
               <Card.Img variant="top" src={product.image} />

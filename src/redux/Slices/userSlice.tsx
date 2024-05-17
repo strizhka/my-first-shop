@@ -37,11 +37,13 @@ export const userSlice = createSlice({
     login: (state, action) => {
       state.isLoged = true;
       state.currentUser = action.payload;
+      console.log("login slice", action.payload);
     },
 
     logout: (state) => {
       state.isLoged = false;
       state.currentUser = null;
+      console.log("logout slice");
     },
 
     setAccessToken: (state, action) => {

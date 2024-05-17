@@ -52,7 +52,9 @@ const CartProductCard = ({ product }: { product: CartItem }) => {
                       style={{ display: "flex", alignItems: "center" }}
                     >
                       <RemoveFromCart item={product} mes={"-1"} />
-                      <h3 style={{ margin: "0 20px" }}>{quantity}</h3>
+                      <h3 className="text" style={{ margin: "0 20px" }}>
+                        {quantity}
+                      </h3>
                       <AddToCart item={product.product} mes={"+1"} />
                     </div>
                   </Row>

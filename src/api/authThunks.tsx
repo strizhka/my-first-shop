@@ -60,6 +60,7 @@ export const userLogin = createAsyncThunk(
   ) => {
     try {
       const loged: LoginResponse = (await loginApi(username, password)).data;
+      console.log("ssss");
 
       const accessToken = loged.accessToken;
       const refreshToken = loged.refreshToken;
@@ -72,7 +73,10 @@ export const userLogin = createAsyncThunk(
       console.log(user.userName);
 
       return loged;
-    } catch (error) {}
+    } catch (error) {
+      console.error("Ошибка при входе пользователя:", error);
+      throw error;
+    }
   }
 );
 

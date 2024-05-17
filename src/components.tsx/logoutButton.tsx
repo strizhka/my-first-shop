@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
   clearCart,
   logout,
@@ -15,6 +15,10 @@ export function LogOut() {
     dispatch(setAccessToken(null));
     dispatch(setRefreshToken(null));
     dispatch(clearCart());
+    console.log(
+      "logout",
+      useAppSelector((state) => state.user.currentUser?.userName)
+    );
   };
   return (
     <div>
