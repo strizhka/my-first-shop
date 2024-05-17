@@ -1,5 +1,5 @@
 import { Card, Col, Row } from "react-bootstrap";
-import { CartItem } from "../redux/Slices/userSlice";
+import { CartItem } from "../../redux/Slices/userSlice";
 import RemoveFromCart from "./removeFromCart";
 import { Link } from "react-router-dom";
 import AddToCart from "./addToCart";

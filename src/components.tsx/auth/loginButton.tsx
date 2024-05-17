@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { userLogin } from "../api/authThunks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { userLogin } from "../../api/authThunks";
 import { Link } from "react-router-dom";
 
 export function Btn_Login({

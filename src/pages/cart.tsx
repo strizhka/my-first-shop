@@ -1,5 +1,5 @@
-import CartProducts from "../components.tsx/cartProducts";
-import { EmptyCart } from "../components.tsx/emptyCart";
+import CartProducts from "../components.tsx/cart/cartProducts";
+import { EmptyCart } from "../components.tsx/cart/emptyCart";
 import { useAppSelector } from "../redux/hooks";
 
 export const Cart = () => {

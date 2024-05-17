@@ -1,5 +1,5 @@
-import { useAppDispatch } from "../redux/hooks";
-import { CartItem, removeItemFromCart } from "../redux/Slices/userSlice";
+import { useAppDispatch } from "../../redux/hooks";
+import { CartItem, removeItemFromCart } from "../../redux/Slices/userSlice";
 
 export const RemoveFromCart = ({ item, mes }: { item: CartItem; mes: any }) => {
   const dispatch = useAppDispatch();

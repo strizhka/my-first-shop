@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { getCategoryById } from "../api/productsApi";
-import { Product, filterByCategory } from "../redux/Slices/productsSlice";
+import { getCategoryById } from "../../api/productsApi";
+import { Product, filterByCategory } from "../../redux/Slices/productsSlice";
 import Products from "./products";
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Category = ({ category, title }: { category: string; title: string }) => {

@@ -1,5 +1,5 @@
 import { Col, Container } from "react-bootstrap";
-import { CartItem } from "../redux/Slices/userSlice";
+import { CartItem } from "../../redux/Slices/userSlice";
 import CartProductCard from "./cartProduct";
 import { ClearCart } from "./clearCartButton";
 

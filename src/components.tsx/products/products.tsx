@@ -1,4 +1,4 @@
-import { Product } from "../redux/Slices/productsSlice";
+import { Product } from "../../redux/Slices/productsSlice";
 import ProductCard from "./productCard";
 import { Container, Row } from "react-bootstrap";
 

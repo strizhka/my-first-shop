@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { User } from "../redux/Slices/userSlice";
-import { useAppSelector } from "../redux/hooks";
-import { LogOut } from "./logoutButton";
+import { User } from "../../redux/Slices/userSlice";
+import { useAppSelector } from "../../redux/hooks";
+import { LogOut } from "../auth/logoutButton";
 
 export const UserProfile = () => {
   const user: User = useAppSelector((state) => state.user.currentUser)!;

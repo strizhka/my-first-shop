@@ -1,4 +1,4 @@
-import UserProfile from "../components.tsx/userDetails";
+import UserProfile from "../components.tsx/user/userDetails";
 import { useAppSelector } from "../redux/hooks";
 import { User } from "../redux/Slices/userSlice";
 

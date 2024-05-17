@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
-import { useAppDispatch } from "../redux/hooks";
-import { userSignUp } from "../api/authThunks";
+import { useAppDispatch } from "../../redux/hooks";
+import { userSignUp } from "../../api/authThunks";
 
 export function Btn_SignUp({
   email,

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { getProductById } from "../api/productsApi";
 import { useState, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import AddToCart from "../components.tsx/addToCart";
+import AddToCart from "../components.tsx/cart/addToCart";
 import CartIcon from "../components.tsx/icons/cart";
 
 const ProductDetails = () => {

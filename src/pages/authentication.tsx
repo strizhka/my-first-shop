@@ -1,7 +1,7 @@
 import { Nav } from "react-bootstrap";
-import LoginForm from "../components.tsx/loginForm";
+import LoginForm from "../components.tsx/auth/loginForm";
 import { useState } from "react";
-import SignUpForm from "../components.tsx/signUpForm";
+import SignUpForm from "../components.tsx/auth/signUpForm";
 
 export const Authentication = () => {
   const [login, setLogin] = useState<boolean>(true);

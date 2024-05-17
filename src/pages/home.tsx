@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
-import Products from "../components.tsx/products";
+import Products from "../components.tsx/products/products";
 import { useAppSelector } from "../redux/hooks";
 
 export const Home = () => {

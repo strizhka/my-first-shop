@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
-import { clearCart } from "../redux/Slices/userSlice";
-import { useAppDispatch } from "../redux/hooks";
+import { clearCart } from "../../redux/Slices/userSlice";
+import { useAppDispatch } from "../../redux/hooks";
 
 export const ClearCart = () => {
   const dispatch = useAppDispatch();

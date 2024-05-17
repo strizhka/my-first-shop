@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Category from "../components.tsx/category";
+import Category from "../components.tsx/products/category";
 
 export const CategoryPage = () => {
   const { title } = useParams<{ title: string }>();

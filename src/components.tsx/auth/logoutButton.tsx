@@ -1,11 +1,11 @@
 import { Button } from "react-bootstrap";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   clearCart,
   logout,
   setAccessToken,
   setRefreshToken,
-} from "../redux/Slices/userSlice";
+} from "../../redux/Slices/userSlice";
 
 export function LogOut() {
   const dispatch = useAppDispatch();

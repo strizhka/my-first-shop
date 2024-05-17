@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { allProductsApi } from "../../api/productsApi";
-import { Category } from "../../components.tsx/sidebar";
+import { Category } from "../../components.tsx/basic/sidebar";
 
 export interface Product {
   id: number;
