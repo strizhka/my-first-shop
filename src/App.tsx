@@ -15,7 +15,6 @@ import ProductDetails from "./pages/productDetails.tsx";
 import { Cart } from "./pages/cart.tsx";
 import { UserPage } from "./pages/user.tsx";
 import { Authentication } from "./pages/authentication.tsx";
-import LoginForm from "./components.tsx/auth/loginForm.tsx";
 
 function App() {
   const dispatch = useAppDispatch();

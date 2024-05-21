@@ -37,7 +37,7 @@ export function testTokensApi(accessToken: string, refreshToken: string) {
     },
   };
   console.log(config);
-  console.log(refreshToken, accessToken); // Не выводятся в первый раз
+  console.log(refreshToken, accessToken);
   const data = axios.post<boolean>(
     `Test/TestAccess`,
     { accessToken, refreshToken }, // Отправляем оба токена

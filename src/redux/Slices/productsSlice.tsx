@@ -39,7 +39,7 @@ export const getProducts = createAsyncThunk(
       return res;
     } catch (err) {
       console.log(err);
-      return thunkAPI.rejectWithValue(err); // Передаем объект ошибки целиком
+      return thunkAPI.rejectWithValue(err);
     }
   }
 );
